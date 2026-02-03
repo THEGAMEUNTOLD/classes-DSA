@@ -7,14 +7,17 @@ function sum(a, b) {
 
 module.exports = { sum };;
 
-// Question: Write a function that takes a name and age as input and prints a greeting message.
+// Question: Write a program that accepts a user's name and age as input and then prints a greeting message in the following format:
+
+"Hello Shery you are 12 years old."
 function greet(name, age) {
   console.log(`Hello ${name} you are ${age} years old.`);
 }
 
 module.exports = { greet };
 
-// Question:write a program that accepts two integers as input and awaps their values. After Swapping, return the new values of the numbers
+// Question:Write a program that accepts two integers as input and swaps their values. After swapping, return the new values of the two numbers.
+
 function swapNumbers(a, b) {
     // Write your logic here
     let temp = a;
@@ -27,7 +30,8 @@ function swapNumbers(a, b) {
 module.exports = { swapNumbers };
 
 
-// Question: Write a function that calculates the compound interest for a given principal amount, rate of interest, time period, and number of times interest is compounded per year.   
+// Question: accumulated after n years, including interest. P is the principalaccumulated after n years, including interest. P is the principal amount (the initial sum of money). r is the annual interest rate (in decimal). t is the time the money is invested for in years. n is the number of times that interest is compounded per year. The compound interest is then calculated as CI=A-P.
+
 
 function calculateCompoundInterest(P, r, t, n) {
     // Calculate the total amount after interest
