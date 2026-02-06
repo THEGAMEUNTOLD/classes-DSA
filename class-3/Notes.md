@@ -1,405 +1,118 @@
-# All conditional statements Use for DSA
 
-# Conditional Statements in JavaScript (For DSA)
+#  Operators in Programming
 
-Conditional statements are used to make decisions in a program.
-They allow the program to execute different blocks of code based on whether a given condition is true or false.
+An operator is a symbol that tells the computer what action to perform.
 
-In JavaScript, the following conditional statements are used:
-
----
-
-## 1. `if` Statement
-
-The `if` statement executes a block of code only if the given condition is true.
-
-### Syntax
-
-```javascript
-if (condition) {
-    // code to be executed if condition is true
-}
-```
-
-### Example
-
-```javascript
-let age = 18;
-
-if (age >= 18) {
-    console.log("The person is eligible to vote.");
-}
-```
+Example:
+`+` tells the computer to add
+`>` tells the computer to compare
 
 ---
 
-## 2. `if–else` Statement
+## 1. Arithmetic Operators
 
-The `if–else` statement executes one block if the condition is true and another block if the condition is false.
+-> Used to do math calculations
 
-### Syntax
+| Operator | Name           | Example | Meaning            |
+| -------- | -------------- | ------- | ------------------ |
+| `+`      | Addition       | `5 + 3` | Adds numbers       |
+| `-`      | Subtraction    | `5 - 3` | Subtracts numbers  |
+| `*`      | Multiplication | `5 * 3` | Multiplies numbers |
+| `/`      | Division       | `6 / 3` | Divides numbers    |
+| `%`      | Modulus        | `5 % 2` | Gives remainder    |
 
-```javascript
-if (condition) {
-    // code if condition is true
-} else {
-    // code if condition is false
-}
-```
+### Example:
 
-### Example
-
-```javascript
-let number = 5;
-
-if (number % 2 === 0) {
-    console.log("The number is even.");
-} else {
-    console.log("The number is odd.");
-}
-```
-
----
-
-## 3. `if–else if–else` Statement
-
-This statement is used when multiple conditions need to be checked in sequence.
-
-### Syntax
-
-```javascript
-if (condition1) {
-    // code for condition1
-} else if (condition2) {
-    // code for condition2
-} else {
-    // code if all conditions are false
-}
-```
-
-### Example
-
-```javascript
-let marks = 72;
-
-if (marks >= 90) {
-    console.log("Grade A");
-} else if (marks >= 60) {
-    console.log("Grade B");
-} else {
-    console.log("Grade C");
-}
-```
-
----
-
-## 4. Nested `if` Statement
-
-An `if` statement written inside another `if` statement is called a nested `if`.
-
-### Syntax
-
-```javascript
-if (condition1) {
-    if (condition2) {
-        // code
-    }
-}
-```
-
-### Example
-
-```javascript
-let age = 20;
-let hasId = true;
-
-if (age >= 18) {
-    if (hasId) {
-        console.log("Entry allowed.");
-    }
-}
-```
-
----
-
-## 5. `switch` Statement
-
-The `switch` statement is used when the same variable is compared with multiple values.
-
-### Syntax
-
-```javascript
-switch (expression) {
-    case value1:
-        // code
-        break;
-    case value2:
-        // code
-        break;
-    default:
-        // code
-}
-```
-
-### Example
-
-```javascript
-let day = 3;
-
-switch (day) {
-    case 1:
-        console.log("Monday");
-        break;
-    case 2:
-        console.log("Tuesday");
-        break;
-    case 3:
-        console.log("Wednesday");
-        break;
-    default:
-        console.log("Invalid day");
-}
-```
-
----
-
-## 6. Ternary Operator (Conditional Operator)
-
-The ternary operator is a short form of the `if–else` statement.
-
-### Syntax
-
-```javascript
-condition ? expression1 : expression2;
-```
-
-### Example
-
-```javascript
-let age = 16;
-
-let result = (age >= 18) ? "Adult" : "Minor";
-console.log(result);
-```
-
----
-
-## 7. Logical Conditions in DSA
-
-In DSA problems, conditions often use logical operators:
-
-* `&&` (AND)
-* `||` (OR)
-* `!` (NOT)
-
-### Example
-
-```javascript
-let x = 10;
-
-if (x > 5 && x < 20) {
-    console.log("x is between 5 and 20");
-}
-```
-
-
-
-
-
-
-
-## Switch Case Statement (JavaScript)
-
-A switch case statement is used when we want to check one value against many possible options.
-
-It is an alternative to writing many `if-else if` statements.
-
----
-Why use Switch Case?
--> Code looks clean and readable
--> Easy to handle multiple conditions
--> Very useful in DSA problems (menu programs, choices, days, months, etc.)
-
----
-
-## Syntax of Switch Case
-
-```javascript
-switch (expression) {
-  case value1:
-    // code to execute
-    break;
-
-  case value2:
-    // code to execute
-    break;
-
-  default:
-    // code if no case matches
-}
-```
-
----
-
-## How it Works 
-
-1. The `expression` is evaluated **once**
-2. Its value is compared with each `case`
-3. If a match is found, that block runs
-4. `break` stops execution
-5. If no case matches, `default` runs
-
----
-
-## Example 1: Day Number to Day Name
-
-```javascript
-let day = 3;
-
-switch (day) {
-  case 1:
-    console.log("Monday");
-    break;
-
-  case 2:
-    console.log("Tuesday");
-    break;
-
-  case 3:
-    console.log("Wednesday");
-    break;
-
-  case 4:
-    console.log("Thursday");
-    break;
-
-  case 5:
-    console.log("Friday");
-    break;
-
-  default:
-    console.log("Invalid day");
-}
-```
-
-Output:
-
-```
-Wednesday
-```
-
----
-
-## Example 2: Simple Calculator 
-
-```javascript
+```js
 let a = 10;
-let b = 5;
-let operator = "+";
+let b = 3;
 
-switch (operator) {
-  case "+":
-    console.log(a + b);
-    break;
-
-  case "-":
-    console.log(a - b);
-    break;
-
-  case "*":
-    console.log(a * b);
-    break;
-
-  case "/":
-    console.log(a / b);
-    break;
-
-  default:
-    console.log("Invalid operator");
-}
+console.log(a + b); // 13
+console.log(a - b); // 7
+console.log(a * b); // 30
+console.log(a / b); // 3.33
+console.log(a % b); // 1
 ```
+
+-> Used in DSA for: calculations, loops, indexes.
 
 ---
 
-## Example 3: Even or Odd using Switch
+## 2 Relational Operators
 
-```javascript
-let num = 7;
+-> Used to compare two values
+-> Result is true or false
 
-switch (num % 2) {
-  case 0:
-    console.log("Even number");
-    break;
+| Operator | Meaning          | Example  |
+| -------- | ---------------- | -------- |
+| `>`      | Greater than     | `5 > 3`  |
+| `<`      | Less than        | `3 < 5`  |
+| `>=`     | Greater or equal | `5 >= 5` |
+| `<=`     | Less or equal    | `3 <= 5` |
+| `==`     | Equal to         | `5 == 5` |
+| `!=`     | Not equal        | `5 != 3` |
 
-  case 1:
-    console.log("Odd number");
-    break;
-}
+### Example:
+
+```js
+let x = 10;
+let y = 20;
+
+console.log(x > y);  // false
+console.log(x < y);  // true
+console.log(x == y); // false
 ```
+
+-> Used in DSA for: conditions, searching, sorting.
 
 ---
 
-## Important Rules 
+## 3 Logical Operators
 
-### 1. `break` is necessary
+-> Used to combine conditions
 
-Without `break`, all next cases will run.
+| Operator | Name | Meaning                      |    |                             |
+| -------- | ---- | ---------------------------- | -- | --------------------------- |
+| `&&`     | AND  | Both conditions must be true |    |                             |
+| `        |      | `                            | OR | At least one condition true |
+| `!`      | NOT  | Reverses the result          |    |                             |
 
-```javascript
-let x = 1;
+### Example:
 
-switch (x) {
-  case 1:
-    console.log("One");
-  case 2:
-    console.log("Two");
-}
+```js
+let age = 20;
+
+console.log(age > 18 && age < 30); // true
+console.log(age < 18 || age > 60); // false
+console.log(!(age > 18));          // false
 ```
 
-Output:
-
-```
-One
-Two
-```
+-> Used in DSA for: decision making, complex conditions.
 
 ---
 
-### 2. `default` is optional
+## 4 Unary Operators
 
-But always good practice to use it.
+ Work on only one value
 
----
+| Operator | Meaning                | Example |
+| -------- | ---------------------- | ------- |
+| `++`     | Increment (add 1)      | `a++`   |
+| `--`     | Decrement (subtract 1) | `a--`   |
+| `+`      | Converts to number     | `+x`    |
+| `-`      | Negative value         | `-x`    |
+| `!`      | Logical NOT            | `!true` |
 
-### 3. Switch uses strict comparison (===)
+### Example:
 
-```javascript
-let x = "1";
+```js
+let count = 5;
 
-switch (x) {
-  case 1:
-    console.log("Number one");
-    break;
-  case "1":
-    console.log("String one");
-}
+count++;
+console.log(count); // 6
+
+count--;
+console.log(count); // 5
+
+console.log(!true); // false
 ```
-
-Output:
-
-```
-String one
-```
-
-
-## Practice Questions 
-
-1. Print month name using month number (1–12)
-2. Check vowel or consonant using switch
-3. Menu program:
-
-   * 1 → Add
-   * 2 → Subtract
-   * 3 → Multiply
-4. Print grade based on character (`A`, `B`, `C`, `F`)
-5. Check weekday or weekend

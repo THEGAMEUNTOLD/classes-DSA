@@ -1,171 +1,200 @@
 
-## 1. `Math.round()`
+# JavaScript Essentials
 
-Rounds to the nearest integer.
+## 1. Difference between `var`, `let`, and `const
+
+### `var`
+
+* `var` is a function-scoped variable.
+* It can be re-declared and reassigned.
+* It is hoisted to the top of its scope and initialized with `undefined`.
+* It may cause unexpected behavior, so it is not recommended in modern JavaScript.
+
+Example:
 
 ```js
-Math.round(4.3); // 4
-Math.round(4.5); // 5
-Math.round(4.7); // 5
+var x = 10;
+var x = 20; // allowed
+x = 30;     // allowed
 ```
-
-Problem:
-Round `7.6` to the nearest integer.
 
 ---
 
-## 2. `Math.ceil()`
+### `let`
 
-Rounds up to the next integer.
+* `let` is block-scoped (limited to `{ }`).
+* It cannot be re-declared, but it can be reassigned.
+* It is hoisted but not initialized.
+
+Example:
 
 ```js
-Math.ceil(4.1); // 5
-Math.ceil(4.9); // 5
+let y = 10;
+// let y = 20;  not allowed
+y = 20;     // allowed
 ```
-
-Problem:
-Find the smallest integer greater than or equal to `9.01`.
 
 ---
 
-## 3. `Math.floor()`
+### `const`
 
-Rounds down to the previous integer.
+* `const` is also block-scoped.
+* It cannot be re-declared or reassigned.
+* The value must be assigned at the time of declaration.
+* Used for constant values.
+
+Example:
 
 ```js
-Math.floor(4.9); // 4
-Math.floor(4.1); // 4
+const z = 10;
+// z = 20;  not allowed
 ```
-
-Problem:
-Find the largest integer less than or equal to `6.99`.
 
 ---
 
-## 4. `Math.trunc()`
+### Comparison Table
 
-Removes the decimal part only.
-
-```js
-Math.trunc(4.9);  // 4
-Math.trunc(-4.9); // -4
-```
-
-Problem:
-Remove the decimal part from `-12.78`.
+| Feature    | var             | let       | const     |
+| ---------- | --------------- | --------- | --------- |
+| Scope      | Function        | Block     | Block     |
+| Re-declare | Yes             | No        | No        |
+| Reassign   | Yes             | Yes       | No        |
+| Hoisting   | Yes (undefined) | Yes (TDZ) | Yes (TDZ) |
 
 ---
 
-## 5. `Math.pow()`
+## 2. Sum of Two Values
 
-Returns power of a number.
+### String + String
+
+* When two strings are added, string concatenation occurs.
 
 ```js
-Math.pow(2, 3); // 8
-Math.pow(5, 2); // 25
+"Hello" + "World"  // "HelloWorld"
 ```
-
-Problem:
-Find `7³`.
 
 ---
 
-## 6. `Math.sqrt()`
+### String + Integer
 
-Returns square root.
+* The integer is converted into a string.
+* Result is string concatenation.
 
 ```js
-Math.sqrt(25); // 5
-Math.sqrt(81); // 9
+"Age: " + 21   // "Age: 21"
 ```
-
-Problem:
-Find the square root of `144`.
 
 ---
 
-## 7. `Math.cbrt()`
+### Integer + Integer
 
-Returns cube root.
+* Arithmetic addition takes place.
+* Result is an integer.
 
 ```js
-Math.cbrt(27);  // 3
-Math.cbrt(64);  // 4
+10 + 20   // 30
 ```
-
-Problem:
-Find the cube root of `125`.
 
 ---
 
-## 8. `Math.abs()`
+## 3. Relation between Integer and String
 
-Returns absolute value (no negative).
+* JavaScript is a dynamically typed language.
+* It automatically converts data types when required.
+* This behavior is called Type Coercion.
+
+Example:
 
 ```js
-Math.abs(-10); // 10
-Math.abs(5);   // 5
+"5" + 5   // "55" (string)
+"5" - 2   // 3 (number)
 ```
-
-Problem:
-Find the absolute value of `-45`.
 
 ---
 
-## 9. `Math.max()`
+## 4. Sum and Message (Type Coercion)
 
-Returns the largest number.
+### Type Coercion
+
+* Automatic conversion of one data type into another.
+* Occurs during operations involving different data types.
+
+Example:
 
 ```js
-Math.max(10, 5, 20, 8); // 20
-```
+let a = 10;
+let b = "5";
 
-Problem:
-Find the maximum of `3, 15, 9, 22`.
+let result = a + b;
+console.log(result); // "105"
+```
 
 ---
 
-## 10. `Math.min()`
-
-Returns the smallest number.
+### Greet the User
 
 ```js
-Math.min(10, 5, 20, 8); // 5
+let name = "Bharat";
+console.log("Hello " + name + ", welcome to JavaScript!");
 ```
-
-Problem:
-Find the minimum of `12, 4, 19, 1`.
 
 ---
 
-## 11. `Math.random()`
+## 5. Accept and Print the Answer
 
-Returns a random number between 0 and 1.
-
-```js
-Math.random(); // 0.0 to 0.999...
-```
-
-Random number between 1 and 10:
+### Using `prompt()`
 
 ```js
-Math.floor(Math.random() * 10) + 1;
+let answer = prompt("Enter your answer:");
+console.log("Your answer is: " + answer);
 ```
 
-Problem:
-Generate a random number between `1` and `100`.
+* `prompt()` accepts input from the user.
+* Input is always received as a string.
 
 ---
 
-## 12. `toFixed()`
+## 6. Swap Two Variables (Three Methods)
 
-Rounds a number to fixed decimal places (returns string).
+### Method 1: Using a Third Variable
 
 ```js
-let num = 3.14159;
-num.toFixed(2); // "3.14"
+let a = 10;
+let b = 20;
+
+let temp = a;
+a = b;
+b = temp;
 ```
 
-Problem:
-Convert `9.87654` to 2 decimal places.
+✔ Most common and easiest method.
 
+---
+
+### Method 2: Using Arithmetic Operators
+
+```js
+let a = 10;
+let b = 20;
+
+a = a + b;
+b = a - b;
+a = a - b;
+```
+
+ Does not require extra variable
+ Not suitable for very large numbers
+
+---
+
+### Method 3: Using Destructuring Assignment (ES6)
+
+```js
+let a = 10;
+let b = 20;
+
+[a, b] = [b, a];
+```
+
+✔ Modern and clean approach
+✔ Most recommended in JavaScript
