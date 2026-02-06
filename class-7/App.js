@@ -1,63 +1,92 @@
-// # Loop problems level-3
+// Assignment on conditional Statements
 
-// Question : Write a program that accepts two integers, a and b, as input and calculates the value of a raised to the power of b (a^b). For example, if a = 2 and b = 3, the result is 8 (since 2^3 = 8).
+// Question : Write a program that takes three integers as input and prints the greatest of the three numbers. . If two or more numbers are equal and the largest, print that number.
 
-// function calculatePower(a, b) {
-//     return a**b;
+// function findGreatest(a, b, c) {
+//    if( a >= b && a >= c ){
+//     return a;
+//    }
+//    else if( b >= a && b >= c ){
+//     return b;
+//    }
+//    else{
+//     return c;
+//    }
 // }
-// 
-// module.exports = { calculatePower };
+// module.exports = { findGreatest };
 
-// Question : A number is called a strong number if the sum of the factorial of its digits is equal to the number itself. Write a program that accepts a number and checks if it is a strong number. . If n is a strong number, print "Yes". . Otherwise, print "No".
+// Write a program that takes a day number (between 1 and 7) as input and prints the corresponding day name. The mapping is as follows: 1: Monday 2: Tuesday 3: Wednesday 4: Thursday 5: Friday 6:Saturday 7: Sunday If the input number is not between 1 and 7, print "Invalid day number".
 
-// function isStrongNumber(n) {
-//     let original = n;
-//     let sum = 0;
+// function printDayName(day) {
+//   switch (day) {
+//     case 1:
+//       return "Monday";
+//     case 2:
+//       return "Tuesday";
+//     case 3:
+//       return "Wednesday";
+//     case 4:
+//       return "Thursday";
+//     case 5:
+//       return "Friday";
+//     case 6:
+//       return "Saturday";
+//     case 7:
+//       return "Sunday";
+//     default:
+//       return "Invalid day number";
+//   }
+// }
+// module.exports = { printDayName };
 
-//     function factorial(num) {
-//         let fact = 1;
-//         for (let i = 1; i <= num; i++) {
-//             fact *= i;
+// Question :Write a program that takes a movie rating as input and determines the movie's status based on the following conditions:
+
+// |-------------------------------------------------------|
+// |    Rating              |     Message to be displayed  |
+// |    0.0 to 2.0          |             Flop             |
+// |    2.1 to 3.4          |          Semi-hit            |
+// |    3.5 to 4.5          |             Hit              |
+// |    4.6 to 5.0          |           Super Hit          |
+
+
+// class Solution {
+//     get_movie_status(ratingStr) {
+//         if(ratingStr >= 0.0 && ratingStr <= 2.0){
+//             return "Flop";
 //         }
-//         return fact;
-//     }
-
-//     while (n > 0) {
-//         let digit = n % 10;
-//         sum += factorial(digit);
-//         n = Math.floor(n / 10);
-//     }
-
-//     if (sum === original) {
-//         return "Yes";
-//     } else {
-//         return "No";
+//         else if(ratingStr >= 2.1 && ratingStr <= 3.4){
+//             return "Semi-hit";
+//         }
+//         else if(ratingStr >= 3.5 && ratingStr <= 4.5){
+//             return "Hit";
+//         }
+//         else{
+//             return "Super Hit";
+//         }
 //     }
 // }
+// module.exports = Solution;
 
-// module.exports = { isStrongNumber };
 
+// Question : Write a program that takes a single English alphabet character as input and checks whether it is a vowel or a consonant. If the character is one of a, e, i, o, u (in either uppercase or lowercase), print "Vowel". Otherwise, print "Consonant". If the input is not a valid English alphabet letter, print "Invalid input".
 
-// Question : Write a program to check whether a number is equal to 50, less than 50, or greater than 50 and print an appropriate message
+// function checkChar(ch) {
+//   if (!(ch >= "a" && ch <= "z" || (ch >= "A" && ch <= "Z"))){
+//     return "Invalid input";
+//   }
 
-// let x = 50;
+//   ch = ch.toLowerCase();
 
-// if (x <= 50) {
-//     if (x === 50) {
-//         console.log("x is 50");
-//     } else {
-//         console.log("x is less than 50");
-//     }
-// } else {
-//     console.log("x is greater than 50");
+//   if ( ch === "a" || ch === "e" || ch === "i" || ch === "o" || ch === "u" ){
+//     return "Vowel";
+//   }
+//   else{
+//     return "Consonant";
+//   }
+
 // }
 
-// Question : Write a JavaScript program that prints numbers from 1 to 3 using a while loop and stops the loop using break.
+// module.exports = { checkChar };
 
-// let x = 1;
-// while (true) {
-//     console.log(x);
-//     x++;
-//     if (x > 3) break;
-// }
+
 
