@@ -3,25 +3,25 @@
 // class Solution {
 //     findFrequencies(arr) {
 //         const freq = new Map();
-// 
+
 //         for (const num of arr) {
 //             freq.set(num, (freq.get(num) || 0) + 1);
 //         }
-// 
+
 //         const seen = new Set();
 //         const result = [];
-// 
+
 //         for (const num of arr) {
 //             if (!seen.has(num)) {
 //                 result.push(num + " " + freq.get(num));
 //                 seen.add(num);
 //             }
 //         }
-// 
+
 //         return result.join("\n");
 //     }
 // }
-// 
+
 // module.exports = Solution;
 
 // You are given an array of integers. Your task is to find the sum of all elements that appear exactly once in the array. For example, in the array [1, 2, 3, 2], only 1 and 3 appear once. So, the output will be 1+ 3 = 4.
